@@ -1,6 +1,6 @@
 Sisli Sancaklar — oynanabilir ilk sürüm
 
-Bu, Kül Geçidi'nden ayrı bir strateji oyunudur. Önceki oyunun dosyaları değiştirilmedi.
+Bu, Kül Geçidi'nden ayrı bir strateji oyunudur.
 
 ## Hemen oyna
 
