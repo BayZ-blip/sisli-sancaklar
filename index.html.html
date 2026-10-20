@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#18221f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Sisli Sancaklar • Dört Beyliğin Ovası</title>
+<style>*{box-sizing:border-box} :root{color-scheme:dark;--bg:#121c19;--panel:#1d2b25;--ink:#ede5cf;--gold:#d4b77a;--muted:#a6b5a7}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,Segoe UI,sans-serif}button,input,select{font:inherit}button{cursor:pointer;color:var(--ink);background:#2a3c31;border:1px solid #58614a;border-radius:9px;padding:11px 15px;touch-action:manipulation}button:hover{filter:brightness(1.15)}button:disabled{opacity:.4;cursor:default}input,select{width:100%;background:#101c17;color:var(--ink);border:1px solid #4b5b49;border-radius:7px;padding:10px}label{display:block;color:var(--muted);font-size:13px;flex:1}label input,label select{margin-top:5px}.hidden{display:none!important}.primary{background:var(--gold);border-color:var(--gold);color:#172019;font-weight:750}.secondary{background:#22332a}.small{padding:6px 10px;font-size:12px}.tiny{padding:6px 12px}.muted{color:var(--muted)}#menu{max-width:1240px;margin:auto;display:grid;grid-template-columns:340px 1fr;min-height:100vh}.hero{position:sticky;top:0;height:100vh;min-height:520px;padding:60px 28px;background:radial-gradient(ellipse at 40% 25%,#405441 0,transparent 65%),linear-gradient(#23352b,#111b18);overflow:hidden}.eyebrow{font-size:10px;letter-spacing:2.5px;color:var(--gold);font-weight:800}h1{font-family:Georgia,serif;font-size:64px;line-height:.98;font-weight:400;letter-spacing:-2px;margin:42px 0 25px}h1 em{color:var(--gold);font-style:normal}.hero p{font-size:17px;max-width:230px;color:#bcc8b8}.crest{position:absolute;bottom:0;left:0;width:100%;opacity:.8}.setup{padding:35px 36px}.step{display:flex;align-items:center;gap:12px;margin-top:12px}.step>span{font-family:Georgia,serif;font-size:23px;color:var(--gold);opacity:.6}.step h2{font-family:Georgia,serif;font-size:24px;margin:8px 0;font-weight:400}.step button{margin-left:auto}.civs{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.civ{padding:12px 5px 9px;min-height:95px;border-color:#3b4f3f;background:#1b2b22;text-align:center;font-size:11px}.civ b{display:block;font-size:29px;line-height:1.4}.civ.active{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold);background:#354131}.detail{border-left:2px solid var(--gold);padding:11px 15px;margin:17px 0 26px;background:#1e2c23;min-height:78px;font-size:13px}.detail strong{color:var(--gold)}.fields{display:flex;gap:12px;align-items:end;margin:14px 0}.maps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}.map{font-size:12px;padding:10px 6px;border-top-width:4px}.map.active{outline:2px solid var(--gold)}.map small{display:block;font-size:10px;color:var(--muted);margin-top:4px}.launch{display:flex;gap:12px;margin:24px 0}.launch button{flex:1}.launch small{display:block;font-weight:400;font-size:11px}details{border-top:1px solid #39483a;padding:16px 0;font-size:13px}summary{cursor:pointer;color:var(--gold);font-weight:650}footer{color:#7b8e7e;font-size:11px;margin:25px 0}#lobby{margin:12px 0}.seat{padding:8px;border-bottom:1px solid #425140}#game{position:fixed;inset:0;background:#26382f;overflow:hidden;user-select:none}#world{display:block;width:100%;height:100%;touch-action:none}#hud{position:absolute;top:0;left:0;right:0;padding:8px 12px;background:#111e19ee;border-bottom:1px solid #7e7e52;display:flex;align-items:center;gap:10px;min-height:48px}.brand{font:22px Georgia;color:var(--gold);white-space:nowrap}.brand span{font:11px system-ui;color:var(--ink);margin-left:8px}#resources{display:flex;gap:17px;flex:1;justify-content:center;font-size:13px;font-weight:700}#resources span{white-space:nowrap}#resources small{color:var(--muted);font-size:10px;margin-right:5px}#objective{position:absolute;top:58px;left:12px;font-size:11px;padding:4px 10px;background:#14231bbd;border-radius:20px;color:#e4dbb6;pointer-events:none}#minimap{position:absolute;right:12px;top:62px;width:150px;height:112px;border:2px solid #a18b60;background:#17241c;touch-action:none}#context{position:absolute;left:12px;bottom:68px;background:#14231bf0;border:1px solid #68754f;border-radius:10px;padding:11px 14px;max-width:min(600px,calc(100% - 24px));min-width:240px;pointer-events:auto}#selectionTitle{font-family:Georgia,serif;color:var(--gold);font-size:18px}#selectionInfo{font-size:11px;color:var(--muted);margin:3px 0 7px}#actions{display:flex;gap:6px;overflow-x:auto;max-width:100%;padding-bottom:3px}#actions button{font-size:11px;white-space:nowrap;padding:7px 10px}#actions button small{display:block;font-size:9px;color:#c0c7ae}#controls{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:6px;background:#112018e8;padding:9px;padding-bottom:max(9px,env(safe-area-inset-bottom))}#controls button{font-size:12px;padding:9px 13px}#toast{position:absolute;top:94px;left:50%;transform:translateX(-50%);background:#e3c98e;color:#162219;padding:9px 17px;border-radius:8px;font-size:13px;max-width:75%;text-align:center;pointer-events:none;opacity:0;transition:opacity .2s;z-index:4}.overlay{position:absolute;inset:0;background:#07100dd9;display:grid;place-items:center;z-index:5}.modal{background:#203429;border:1px solid #8d895e;border-radius:15px;padding:30px;max-width:380px;width:90%;text-align:center}.modal h2{font:30px Georgia;color:var(--gold)}.modal button{display:block;width:100%;margin-top:10px}.modal p{font-size:13px;color:var(--muted)}
+@media(max-width:850px){#menu{grid-template-columns:230px 1fr}.hero{padding:35px 20px}h1{font-size:44px}.setup{padding:22px}.civs{grid-template-columns:repeat(5,1fr)}.brand span{display:none}#resources{gap:10px}}@media(max-width:620px){#menu{display:block}.hero{position:relative;height:220px;min-height:0;padding:24px}.hero h1{font-size:44px;margin:16px 0 10px}.hero h1 br{display:none}.hero p{font-size:13px;max-width:65%;margin:0}.crest{left:auto;right:0;width:150px}.eyebrow{font-size:8px;letter-spacing:1.8px}.setup{padding:20px 16px}.civs{gap:5px}.civ{font-size:10px;min-height:84px}.civ b{font-size:25px}.maps{grid-template-columns:repeat(2,1fr)}.launch{flex-direction:column}.fields{flex-wrap:wrap}.fields label{min-width:120px}.step h2{font-size:23px}#hud{gap:5px;padding:7px}#resources{gap:7px;font-size:11px}#resources small{display:none}.brand{font-size:17px}#minimap{width:105px;height:79px;right:8px;top:58px}#objective{font-size:9px;max-width:65%;top:56px}#context{bottom:61px;left:8px;max-width:calc(100% - 16px);padding:8px 10px}#selectionTitle{font-size:16px}#controls{gap:4px;padding:7px}#controls button{font-size:10px;padding:10px 9px}.tiny{padding:5px 9px}#toast{top:145px}}@media(max-height:500px){#context{bottom:57px;padding:6px 10px}#selectionInfo{margin:0 0 3px}#minimap{width:112px;height:84px}#actions button{padding:5px 9px}#objective{top:52px}}
+</style>
+</head>
+<body>
+<section id="menu">
+  <div class="hero"><div class="eyebrow">DÖRT BEYLİĞİN OVASI · OYNANABİLİR İLK SÜRÜM</div>
+    <h1>Sisli<br><em>Sancaklar</em></h1>
+    <p>Bir avuç köylü. Bir sancak. Kuracağın bir dünya.</p>
+    <svg class="crest" viewBox="0 0 300 210" aria-hidden="true"><path d="M0 196L42 151 90 179 155 92 199 136 250 64 300 125V210H0" fill="#34483c"/><path d="M100 185V106H119V83H135V106H160V83H177V106H197V185" fill="#8a8e76"/><path d="M142 185V149Q150 136 158 149V185" fill="#202d29"/><path d="M150 100V20M151 25Q180 10 214 29L201 46Q177 30 151 47" stroke="#d5b978" fill="#bc855a" stroke-width="3"/><path d="M30 210L75 164 89 210M221 210L242 145 267 210" fill="#1c302a"/></svg>
+  </div>
+  <main class="setup">
+    <div class="step"><span>01</span><h2>Sancağını seç</h2><button id="audioToggle" class="small secondary">♫ Ses kapalı</button></div>
+    <p class="muted">Her beylik farklı bir üstünlük taşır. Bütün seçimler ücretsiz.</p>
+    <div id="civs" class="civs"></div>
+    <div id="civDetail" class="detail"></div>
+    <div class="step"><span>02</span><h2>Seferini hazırla</h2></div>
+    <div class="fields"><label>Hükümdar adın<input id="playerName" maxlength="20" value="Gezgin"></label><label>Savaş düzeni<select id="mode"><option value="ffa">4 kişi · Herkes tek</option><option value="teams">4 kişi · 2’ye 2</option></select></label></div>
+    <div id="maps" class="maps"></div>
+    <div class="fields"><label>Harita tohumu<input id="seed" type="number" min="1" max="999999" value="14573"></label><button id="randomSeed" class="secondary">Yeni arazi tohumu ↻</button></div>
+    <div class="launch"><button id="newGame" class="primary">İnternetsiz sefere çık <small>Sen + 3 bilgisayar oyuncusu</small></button><button id="continueGame" class="secondary">Kayıtlı sefere devam et</button></div>
+    <button id="install" class="secondary hidden">Telefona / ana ekrana ekle</button><p id="offlineStatus" class="muted"></p>
+    <details id="lanPanel"><summary>Aynı Wi-Fi’de arkadaşlarınla oyna</summary><p class="muted">Bilgisayarda ODAYI_AC.cmd dosyasını çalıştır. Telefonlarda ekranda çıkan yerel adresi aç. Bu bölüm o adreste çalışır.</p><div class="fields"><button id="hostRoom" class="primary">Oda kur</button><label>Oda kodu<input id="roomCode" maxlength="5" placeholder="ABCDE" autocomplete="off"></label><button id="joinRoom" class="secondary">Katıl</button></div><div id="lobby"></div><button id="startRoom" class="primary hidden">Maçı başlat</button><button id="leaveRoom" class="secondary hidden">Odadan ayrıl</button></details>
+    <details><summary>Nasıl oynanır?</summary><p>Köylüye dokun, ardından ağaç, maden veya meyveye dokun. Topladığı kaynağı merkeze ya da depoya taşır. Köylü seçiliyken bir bina seçip boş araziye dokunarak inşa et.</p><p>Binaya dokunarak asker veya köylü eğit. Asker seçip yere dokun: yürür; düşmana dokun: saldırır. Mızraklı süvariye, süvari okçuya, okçu mızraklıya güçlüdür. Rakiplerin oba merkezlerini yıkarak kazan.</p><p>Haritayı parmağınla sürükle. İki parmakla yakınlaştır. Alt düğmeler bütün köylülerini veya ordunu seçer. Evler nüfus sınırını artırır. Aynı takım görüş alanını paylaşır.</p><p>İnternetsiz sefer 10 saniyede bir kaydolur. Wi-Fi maçları bilgisayar sunucusu açık kaldığı sürece sürer; bu ilk sürümde ağ maçı kaydı yoktur.</p></details>
+    <footer>Özgün çizimler ve sentezlenmiş sesler · Dış oyun varlığı kullanılmaz.<br>Çalışma adı; mağaza yayını öncesinde isim ve hak kontrolü yapılacaktır.</footer>
+  </main>
+</section>
+<section id="game" class="hidden">
+  <canvas id="world"></canvas>
+  <header id="hud"><div class="brand">SS <span id="identity"></span></div><div id="resources"></div><button id="soundGame" class="tiny">♫</button><button id="pause" class="tiny">Ⅱ</button></header>
+  <div id="objective">Rakip oba merkezlerini yık.</div>
+  <div id="toast" role="status"></div>
+  <canvas id="minimap" width="180" height="135" aria-label="Küçük harita"></canvas>
+  <aside id="context"><div id="selectionTitle">Birliğine dokun</div><div id="selectionInfo"></div><div id="actions"></div></aside>
+  <nav id="controls"><button id="selectWorkers">Köylüler</button><button id="selectArmy">Ordu</button><button id="home">Merkez</button><button id="zoomOut">−</button><button id="zoomIn">+</button><button id="clear">Seçimi bırak</button></nav>
+  <div id="pauseLayer" class="overlay hidden"><div class="modal"><div class="eyebrow">SİSLİ SANCAKLAR</div><h2 id="pauseTitle">Sefer duraklatıldı</h2><p id="pauseText"></p><button id="resume" class="primary">Devam et</button><button id="save" class="secondary">Şimdi kaydet</button><button id="toMenu" class="secondary">Ana menü</button></div></div>
+</section>
+<script>(function (root) {
+  'use strict';
+  const CIVS = [
+    {id:'koru', name:'Koru Birliği', icon:'♣', color:'#76a878', text:'Ormanın ustaları', perk:'Odun +%30 · Okçu hasarı +%20', gather:{wood:1.3}, damage:{archer:1.2}, weapon:'Dallı uzun yay'},
+    {id:'demir', name:'Demir Yurt', icon:'⚒', color:'#b5bbc7', text:'Dağların muhafızları', perk:'Altın ve taş +%20 · Asker canı +%15', gather:{gold:1.2,stone:1.2}, hp:1.15, weapon:'Dövme uçlu mızrak'},
+    {id:'yel', name:'Yel Otağı', icon:'➶', color:'#e7bf80', text:'Bozkırın süvarileri', perk:'Süvari hızı +%25 · Süvari hasarı +%15', speed:{rider:1.25}, damage:{rider:1.15}, weapon:'Kavisli atlı kılıcı'},
+    {id:'irmak', name:'Irmak Hanesi', icon:'≈', color:'#74bfce', text:'Bereketin koruyucuları', perk:'Yiyecek +%30 · Köylü hızı +%10', gather:{food:1.3}, speed:{worker:1.1}, weapon:'Söğüt gövdeli yay'},
+    {id:'kul', name:'Kül Ocağı', icon:'✦', color:'#e28c69', text:'Ateşin demircileri', perk:'Tüm askerlerin hasarı +%12', damage:{spear:1.12,archer:1.12,rider:1.12}, weapon:'Köz işlemeli çelik'},
+    {id:'ayaz', name:'Ayaz Nöbeti', icon:'❄', color:'#9dbfe4', text:'Kışın bekçileri', perk:'Mızraklı canı +%30 · Taş +%15', unitHp:{spear:1.3}, gather:{stone:1.15}, weapon:'Çift kanatlı mızrak'},
+    {id:'kehribar', name:'Kehribar Meclisi', icon:'◆', color:'#e3c45d', text:'Usta tüccarlar', perk:'Altın +%40 · Okçu eğitimi %15 hızlı', gather:{gold:1.4}, train:{archer:.85}, weapon:'Kehribar kakmalı yay'},
+    {id:'sis', name:'Sis Gözcüleri', icon:'☾', color:'#b5a0db', text:'Uzakları görenler', perk:'Görüş +%25 · Okçu menzili +%20', sight:1.25, range:{archer:1.2}, weapon:'Sessiz menzil yayı'},
+    {id:'tas', name:'Taş Yemini', icon:'▣', color:'#c5aa8c', text:'Kalelerin ustaları', perk:'Bina canı +%35 · İnşa %25 hızlı', buildingHp:1.35, build:1.25, weapon:'Kale muhafızı mızrağı'},
+    {id:'seher', name:'Seher Sancağı', icon:'☀', color:'#dda6b1', text:'Sabahın öncüleri', perk:'Asker eğitimi %20 hızlı · Yiyecek +%10', trainAll:.8, gather:{food:1.1}, weapon:'Şafak çeliği kılıç'}
+  ];
+  const UNITS = {
+    worker:{name:'Köylü',hp:48,speed:67,damage:3,range:19,cool:1.2,cost:{food:45},time:8,building:'town'},
+    spear:{name:'Mızraklı',hp:105,speed:66,damage:13,range:25,cool:1.1,cost:{food:55,wood:25},time:10,building:'barracks'},
+    archer:{name:'Okçu',hp:65,speed:64,damage:10,range:145,cool:1.5,cost:{wood:45,gold:25},time:12,building:'range'},
+    rider:{name:'Süvari',hp:150,speed:103,damage:17,range:27,cool:1.3,cost:{food:85,gold:45},time:16,building:'stable'}
+  };
+  const BUILDINGS = {
+    town:{name:'Oba merkezi',hp:1700,size:54,cost:{wood:300,stone:200},time:38},
+    house:{name:'Ev',hp:350,size:29,cost:{wood:55},time:10},
+    depot:{name:'Depo',hp:500,size:30,cost:{wood:80},time:13},
+    barracks:{name:'Kışla',hp:850,size:39,cost:{wood:140},time:21},
+    range:{name:'Okçu ocağı',hp:720,size:38,cost:{wood:150},time:22},
+    stable:{name:'Ahır',hp:900,size:42,cost:{wood:180,food:80},time:25},
+    farm:{name:'Tarla',hp:300,size:34,cost:{wood:70},time:12},
+    tower:{name:'Gözcü kulesi',hp:1000,size:26,cost:{wood:70,stone:120},time:27}
+  };
+  const MAPS = [
+    {id:'koruluk',name:'Eski Koruluk',desc:'Yeşil açıklıklar, bol odun',ground:'#3e5746',accent:'#55745a',wood:1.3},
+    {id:'kum',name:'Bakır Kumlar',desc:'Sıcak toprak, zengin altın',ground:'#806747',accent:'#a18858',gold:1.35},
+    {id:'kar',name:'Solgun Kış',desc:'Karlı ova, bol taş',ground:'#829298',accent:'#aab9bb',stone:1.4},
+    {id:'kul',name:'Kül Yaylası',desc:'Karanlık ova, geniş savaş alanı',ground:'#48464e',accent:'#62535b',gold:1.15}
+  ];
+  function rng(seed) { let a=seed>>>0; return ()=>{a+=0x6D2B79F5;let t=a;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return ((t^t>>>14)>>>0)/4294967296;}; }
+  const civ = p=>CIVS.find(c=>c.id===p.civ)||CIVS[0];
+  const dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
+  const alive=e=>e.hp>0;
+  function pay(p,cost) { if(!Object.keys(cost).every(k=>p.res[k]>=cost[k]))return false;for(const k in cost)p.res[k]-=cost[k];return true; }
+  function cap(s,id) {return Math.min(90,10+s.buildings.filter(b=>b.owner===id&&alive(b)&&b.progress>=1&&b.type==='house').length*7);}
+  function population(s,id) {return s.units.filter(u=>u.owner===id&&alive(u)).length+s.buildings.filter(b=>b.owner===id&&alive(b)).reduce((n,b)=>n+b.queue.length,0);}
+  function unit(s,owner,type,x,y) {
+    const p=s.players[owner], c=civ(p), d=UNITS[type];
+    const hp=Math.round(d.hp*(c.hp||1)*(c.unitHp?.[type]||1)*(1+p.age*.12));
+    const u={id:s.next++,owner,type,x,y,hp,maxHp:hp,order:null,carry:0,carryType:null,cd:0};
+    s.units.push(u);return u;
+  }
+  function building(s,owner,type,x,y,done=true) {
+    const c=civ(s.players[owner]),d=BUILDINGS[type],hp=Math.round(d.hp*(c.buildingHp||1));
+    const b={id:s.next++,owner,type,x,y,hp:done?hp:hp*.2,maxHp:hp,progress:done?1:0,queue:[],cd:0,stock:type==='farm'?900:0};
+    s.buildings.push(b);return b;
+  }
+  function create(opts={}) {
+    const rand=rng(opts.seed||12580), map=MAPS.find(m=>m.id===opts.map)||MAPS[0];
+    const s={version:1,seed:opts.seed||12580,map:map.id,w:2400,h:1800,time:0,next:1,players:[],units:[],buildings:[],resources:[],effects:[],winner:null,mode:opts.mode||'ffa',aiClock:0};
+    const starts=[{x:280,y:280},{x:2120,y:1520},{x:2120,y:280},{x:280,y:1520}];
+    for(let i=0;i<4;i++){
+      const opt=opts.players?.[i]||{};
+      s.players.push({id:i,name:opt.name||('Beylik '+(i+1)),civ:opt.civ||CIVS[i*2].id,ai:opt.ai!==false,team:s.mode==='teams'?i%2:i,res:{wood:260,food:240,gold:100,stone:150},age:0,dead:false,explored:[]});
+      const a=starts[i];building(s,i,'town',a.x,a.y);building(s,i,'house',a.x+90,a.y);
+      for(let j=0;j<5;j++)unit(s,i,'worker',a.x-65+j*25,a.y+75);
+      unit(s,i,'spear',a.x,a.y+115);
+      // Identical nearby supplies keep all four starting positions fair.
+      for(const [k,type] of ['wood','food','gold','stone'].entries()){
+        for(let j=0;j<(type==='wood'?8:3);j++){
+          const ang=.6+k*1.5+j*.12, r=160+j*16;
+          s.resources.push({id:s.next++,type,x:a.x+Math.cos(ang)*r,y:a.y+Math.sin(ang)*r,amount:type==='wood'?300:550});
+        }
+      }
+    }
+    for(let j=0;j<180;j++){
+      const x=75+rand()*2250,y=75+rand()*1650;
+      if(starts.some(a=>Math.hypot(x-a.x,y-a.y)<310))continue;
+      const v=rand(),type=v<.53?'wood':v<.7?'food':v<.86?'gold':'stone';
+      s.resources.push({id:s.next++,type,x,y,amount:Math.round((type==='wood'?320:650)*(map[type]||1))});
+    }
+    vision(s);return s;
+  }
+  function enemy(s,a,b){return a.owner!==b.owner&&s.players[a.owner].team!==s.players[b.owner].team&&!s.players[b.owner].dead;}
+  function find(s,id){return s.units.find(e=>e.id===id&&alive(e))||s.buildings.find(e=>e.id===id&&alive(e))||s.resources.find(e=>e.id===id&&e.amount>0);}
+  function nearest(list,o,predicate=()=>true){let best=null,d=Infinity;for(const e of list){if(!predicate(e))continue;const v=dist(o,e);if(v<d){d=v;best=e;}}return best;}
+  function command(s,pid,c) {
+    const p=s.players[pid];if(!p||p.dead||s.winner!==null||!c||typeof c!=='object')return {ok:false,error:'Maç etkin değil.'};
+    if(c.type==='order'){
+      if(!Array.isArray(c.ids)||c.ids.length>90)return {ok:false,error:'Geçersiz seçim.'};
+      const target=find(s,c.target),x=Number(c.x),y=Number(c.y);
+      if(!target&&(!Number.isFinite(x)||!Number.isFinite(y)))return {ok:false,error:'Geçersiz hedef.'};
+      let n=0;
+      for(const u of s.units.filter(u=>u.owner===pid&&alive(u)&&c.ids.includes(u.id))){
+        if(target&&target.owner!==undefined&&enemy(s,u,target))u.order={kind:'attack',id:target.id};
+        else if(u.type==='worker'&&target&&(target.amount>0||target.type==='farm'&&target.owner===pid&&target.progress>=1&&target.stock>0)){
+          const nearby=target.amount>0?s.resources.filter(r=>r.type===target.type&&r.amount>0&&dist(r,target)<125).sort((a,b)=>dist(a,target)-dist(b,target)):[target];
+          u.order={kind:'gather',id:(nearby[n%nearby.length]||target).id};
+        }
+        else if(u.type==='worker'&&target?.owner===pid&&target.progress<1)u.order={kind:'build',id:target.id};
+        else u.order={kind:'move',x:Math.max(25,Math.min(s.w-25,(target?target.x:x)+(n%5-2)*18)),y:Math.max(25,Math.min(s.h-25,(target?target.y:y)+Math.floor(n/5)*18))};
+        n++;
+      }return {ok:n>0,error:n?'':'Önce kendi birliğini seç.'};
+    }
+    if(c.type==='train'){
+      const b=s.buildings.find(b=>b.id===c.id&&b.owner===pid&&alive(b)&&b.progress>=1),d=UNITS[c.unit];
+      if(!b||!d||d.building!==b.type)return {ok:false,error:'Bu binada eğitilemez.'};
+      if(b.queue.length>=5)return {ok:false,error:'Eğitim kuyruğu dolu.'};
+      if(population(s,pid)>=cap(s,pid))return {ok:false,error:'Nüfus dolu. Ev inşa et.'};
+      if(!pay(p,d.cost))return {ok:false,error:'Kaynak yetersiz.'};
+      b.queue.push({type:c.unit,left:d.time*(civ(p).train?.[c.unit]||1)*(civ(p).trainAll||1)});return {ok:true};
+    }
+    if(c.type==='build'){
+      const d=BUILDINGS[c.building],x=Number(c.x),y=Number(c.y);
+      if(!Array.isArray(c.ids)||c.ids.length>90)return {ok:false,error:'Geçersiz köylü seçimi.'};
+      const workers=s.units.filter(u=>u.owner===pid&&u.type==='worker'&&alive(u)&&c.ids.includes(u.id));
+      if(!d||c.building==='town'||!workers.length||!Number.isFinite(x)||!Number.isFinite(y))return {ok:false,error:'İnşa için köylü seç.'};
+      if(x<60||y<60||x>s.w-60||y>s.h-60)return {ok:false,error:'Harita sınırına çok yakın.'};
+      if(s.buildings.some(b=>alive(b)&&dist(b,{x,y})<BUILDINGS[b.type].size+d.size+18)||s.resources.some(r=>r.amount>0&&dist(r,{x,y})<d.size+16))return {ok:false,error:'Burada yer yok. Açık bir alan seç.'};
+      if(!pay(p,d.cost))return {ok:false,error:'Kaynak yetersiz.'};
+      const b=building(s,pid,c.building,x,y,false);workers.forEach(u=>u.order={kind:'build',id:b.id});return {ok:true,id:b.id};
+    }
+    if(c.type==='age'){
+      if(p.age>=2)return {ok:false,error:'Son gelişim seviyesindesin.'};
+      const cost={food:250*(p.age+1),gold:150*(p.age+1)};
+      if(!pay(p,cost))return {ok:false,error:'Gelişim için '+cost.food+' yiyecek, '+cost.gold+' altın gerekli.'};
+      p.age++;return {ok:true};
+    }
+    return {ok:false,error:'Bilinmeyen komut.'};
+  }
+  function walk(u,t,dt,s,stop=8){
+    const d=dist(u,t);if(d<=stop+.25)return true;
+    const speed=UNITS[u.type].speed*(civ(s.players[u.owner]).speed?.[u.type]||1);
+    const step=Math.min(d-stop,speed*dt);
+    u.x+=(t.x-u.x)/d*step;u.y+=(t.y-u.y)/d*step;return false;
+  }
+  function damage(s,from,to,amount,projectile=false) {
+    if(!alive(to))return;
+    to.hp=Math.max(0,to.hp-amount);
+    if(s.effects.length<80)s.effects.push({x:from.x,y:from.y,tx:to.x,ty:to.y,kind:projectile?'arrow':'hit',left:.35,owner:from.owner});
+  }
+  function combat(s,u,t,dt){
+    const d=UNITS[u.type],p=s.players[u.owner],c=civ(p);
+    const range=d.range*(c.range?.[u.type]||1)+(t.queue?BUILDINGS[t.type].size*.65:0);
+    if(!walk(u,t,dt,s,range))return;
+    if(u.cd<=0){
+      let mult=1;
+      if(u.type==='spear'&&t.type==='rider')mult=2.1;
+      if(u.type==='archer'&&t.type==='spear')mult=1.45;
+      if(u.type==='rider'&&t.type==='archer')mult=1.65;
+      damage(s,u,t,d.damage*(c.damage?.[u.type]||1)*(1+p.age*.2)*mult,u.type==='archer');
+      u.cd=d.cool;
+    }
+  }
+  function tick(s,dt){
+    if(s.winner!==null)return;
+    dt=Math.min(.25,Math.max(0,dt));s.time+=dt;
+    for(const e of s.effects)e.left-=dt;s.effects=s.effects.filter(e=>e.left>0);
+    const targets=[...s.units,...s.buildings].filter(alive);
+    for(const u of s.units){
+      if(!alive(u)||s.players[u.owner].dead)continue;
+      u.cd=Math.max(0,u.cd-dt);
+      const p=s.players[u.owner],c=civ(p);let o=u.order;
+      if(u.type!=='worker'&&(!o||o.kind==='move')){
+        const t=nearest(targets,u,t=>enemy(s,u,t)&&dist(u,t)<190);
+        if(t){combat(s,u,t,dt);continue;}
+      }
+      if(!o)continue;
+      if(o.kind==='move'){if(walk(u,o,dt,s))u.order=null;continue;}
+      const t=find(s,o.id);
+      if(o.kind==='attack'){
+        if(!t||t.owner===undefined||!enemy(s,u,t)){u.order=null;continue;}
+        combat(s,u,t,dt);continue;
+      }
+      if(o.kind==='build'){
+        if(!t||t.progress>=1){u.order=null;continue;}
+        if(walk(u,t,dt,s,BUILDINGS[t.type].size+10)){
+          const advance=dt/BUILDINGS[t.type].time*(c.build||1);
+          const before=t.progress;t.progress=Math.min(1,t.progress+advance);
+          t.hp=Math.min(t.maxHp,t.hp+(t.progress-before)*t.maxHp*.8);
+          if(t.progress>=1)u.order=null;
+        }continue;
+      }
+      if(o.kind==='gather'){
+        const depleted=!t||(t.amount??t.stock)<=0;
+        if(u.carry>=12||o.returning||depleted&&u.carry>0){
+          o.returning=true;
+          const depot=nearest(s.buildings,u,b=>b.owner===u.owner&&alive(b)&&b.progress>=1&&(b.type==='town'||b.type==='depot'));
+          if(!depot){u.order=null;continue;}
+          if(walk(u,depot,dt,s,BUILDINGS[depot.type].size+8)){
+            p.res[u.carryType]+=u.carry;u.carry=0;u.carryType=null;o.returning=false;
+            if(depleted)u.order=null;
+          }
+        }else if(depleted)u.order=null;
+        else if(walk(u,t,dt,s,t.type==='farm'?30:19)){
+          const type=t.type==='farm'?'food':t.type;
+          // A reassigned worker delivers an existing load before collecting another resource.
+          if(u.carry>0&&u.carryType!==type){o.returning=true;continue;}
+          const qty=Math.min(12-u.carry,dt*3.8*(c.gather?.[type]||1),t.amount??t.stock);
+          u.carryType=type;u.carry+=qty;
+          if(t.type==='farm')t.stock-=qty;else t.amount-=qty;
+        }
+      }
+    }
+    for(const b of s.buildings){
+      if(!alive(b)||b.progress<1||s.players[b.owner].dead)continue;
+      if(b.queue.length){
+        b.queue[0].left-=dt;
+        if(b.queue[0].left<=0){unit(s,b.owner,b.queue.shift().type,b.x+45,b.y+BUILDINGS[b.type].size+25);}
+      }
+      if(b.type==='tower'||b.type==='town'){
+        b.cd-=dt;
+        const t=nearest(s.units,b,u=>alive(u)&&enemy(s,b,u)&&dist(b,u)<(b.type==='tower'?210:170));
+        if(t&&b.cd<=0){damage(s,b,t,b.type==='tower'?19:10,true);b.cd=1.5;}
+      }
+    }
+    for(const p of s.players){
+      if(!p.dead&&!s.buildings.some(b=>b.owner===p.id&&b.type==='town'&&alive(b))){
+        p.dead=true;s.units.filter(u=>u.owner===p.id).forEach(u=>u.hp=0);s.buildings.filter(b=>b.owner===p.id).forEach(b=>b.hp=0);
+      }
+    }
+    const teams=[...new Set(s.players.filter(p=>!p.dead).map(p=>p.team))];
+    if(teams.length<=1)s.winner=teams.length?teams[0]:-1;
+    s.aiClock+=dt;if(s.aiClock>=1.5){s.aiClock=0;ai(s);vision(s);}
+    s.units=s.units.filter(alive);s.buildings=s.buildings.filter(alive);
+  }
+  function ai(s){
+    for(const p of s.players.filter(p=>p.ai&&!p.dead)){
+      const own=s.units.filter(u=>u.owner===p.id&&alive(u)),bs=s.buildings.filter(b=>b.owner===p.id&&alive(b));
+      const town=bs.find(b=>b.type==='town');if(!town)continue;
+      const workers=own.filter(u=>u.type==='worker');
+      const needs=['food','wood','food','gold','wood','stone'];
+      workers.filter(u=>!u.order).forEach((u,i)=>{
+        const type=needs[(i+Math.floor(s.time/10))%needs.length];
+        const r=nearest(s.resources,u,r=>r.type===type&&r.amount>0);
+        if(r)command(s,p.id,{type:'order',ids:[u.id],target:r.id});
+      });
+      if(workers.length<12&&town.queue.length<1)command(s,p.id,{type:'train',id:town.id,unit:'worker'});
+      let want=null;
+      if(population(s,p.id)>=cap(s,p.id)-2)want='house';
+      else if(!bs.some(b=>b.type==='barracks'))want='barracks';
+      else if(!bs.some(b=>b.type==='range'))want='range';
+      else if(!bs.some(b=>b.type==='stable'))want='stable';
+      if(want&&workers.length&&bs.every(b=>b.progress>=1)){
+        for(let j=0;j<16;j++){
+          const ang=j*2.4+Math.floor(s.time/10),r=130+Math.floor(j/5)*85;
+          const result=command(s,p.id,{type:'build',building:want,ids:[workers[0].id],x:town.x+Math.cos(ang)*r,y:town.y+Math.sin(ang)*r});
+          if(result.ok)break;
+        }
+      }
+      for(const b of bs.filter(b=>b.queue.length<2)){
+        const type=Object.keys(UNITS).find(k=>UNITS[k].building===b.type&&k!=='worker');
+        if(type)command(s,p.id,{type:'train',id:b.id,unit:type});
+      }
+      if(s.time>180&&p.age<2)command(s,p.id,{type:'age'});
+      const army=own.filter(u=>u.type!=='worker');
+      if(s.time>85&&army.length>=5){
+        const target=nearest(s.buildings,town,b=>b.type==='town'&&alive(b)&&enemy(s,town,b));
+        if(target)command(s,p.id,{type:'order',ids:army.filter(u=>!u.order||u.order.kind==='move').map(u=>u.id),target:target.id});
+      }
+    }
+  }
+  function vision(s){
+    for(const p of s.players){
+      const visible=new Set();
+      const objects=[...s.units,...s.buildings].filter(o=>alive(o)&&s.players[o.owner].team===p.team);
+      for(const o of objects){
+        const r=230*(civ(s.players[o.owner]).sight||1),cx=Math.floor(o.x/80),cy=Math.floor(o.y/80),rr=Math.ceil(r/80);
+        for(let y=Math.max(0,cy-rr);y<=Math.min(22,cy+rr);y++)for(let x=Math.max(0,cx-rr);x<=Math.min(29,cx+rr);x++)
+          if(Math.hypot(x*80+40-o.x,y*80+40-o.y)<r)visible.add(y*30+x);
+      }
+      p.visible=[...visible];p.explored=[...new Set([...p.explored,...p.visible])];
+    }
+  }
+  function restore(raw) {
+    if(!raw||raw.version!==1||!Array.isArray(raw.players)||raw.players.length!==4||!Array.isArray(raw.units)||!Array.isArray(raw.buildings)||!Array.isArray(raw.resources))throw Error('Kayıt okunamadı.');
+    return raw;
+  }
+  const api={CIVS,UNITS,BUILDINGS,MAPS,create,tick,command,cap,population,civ,find,dist,restore,vision};
+  if(typeof module!=='undefined'&&module.exports)module.exports=api;
+  root.Sancak=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>(() => {
+  'use strict';
+  const E=window.Sancak,$=id=>document.getElementById(id);
+  const COLORS=['#82d2c0','#ed9787','#e8cf7c','#acaceb'];
+  const SAVE='sisli-sancaklar-sefer-v1', SESSION='sisli-sancaklar-oda-v1';
+  let state=null,pid=0,civ='koru',map='koruluk',selected=[],buildType=null,paused=false,network=null;
+  let camera={x:280,y:280,zoom:1},last=performance.now(),saveClock=0,hudClock=0,toastTimer,viewW=0,viewH=0,contextKey='';
+  const canvas=$('world'),ctx=canvas.getContext('2d'),mini=$('minimap').getContext('2d');
+  const costText=c=>Object.entries(c).map(([k,v])=>`${v} ${({wood:'odun',food:'yiyecek',gold:'altın',stone:'taş'})[k]}`).join(' · ');
+  const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function toast(text){$('toast').textContent=text;$('toast').style.opacity='1';clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').style.opacity='0',3500);}
+  class Sound {
+    constructor(){this.enabled=false;this.ctx=null;this.timer=null;this.step=0;}
+    start(){if(!this.ctx)this.ctx=new(window.AudioContext||window.webkitAudioContext)();this.ctx.resume();this.enabled=true;if(!this.timer)this.timer=setInterval(()=>this.music(),450);this.labels();}
+    toggle(){if(this.enabled){this.enabled=false;this.ctx?.suspend();}else{try{this.start();}catch{toast('Bu tarayıcıda ses başlatılamadı.');}}this.labels();}
+    labels(){$('audioToggle').textContent=this.enabled?'♫ Ses açık':'♫ Ses kapalı';$('soundGame').textContent=this.enabled?'♫':'♪';}
+    tone(freq,dur=.15,type='sine',vol=.04,delay=0){
+      if(!this.enabled||!this.ctx||this.ctx.state!=='running')return;
+      const o=this.ctx.createOscillator(),g=this.ctx.createGain(),t=this.ctx.currentTime+delay;
+      o.type=type;o.frequency.setValueAtTime(freq,t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.025);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+      o.connect(g);g.connect(this.ctx.destination);o.start(t);o.stop(t+dur+.02);
+    }
+    music(){
+      if(document.hidden||!this.enabled)return;
+      // Original, locally synthesized pentatonic motif. No samples or external songs.
+      const motif=[0,7,3,10,7,5,3,7,0,3,12,10,7,3,5,-2];
+      const n=motif[this.step%motif.length],freq=146.832*Math.pow(2,n/12);
+      this.tone(freq,.55,'triangle',.018);
+      if(this.step%4===0)this.tone(this.step%16<8?73.416:65.406,1.5,'sine',.027);
+      if(this.step%8===6)this.tone(freq*2,.28,'sine',.012,.14);
+      this.step++;
+    }
+    cue(kind){
+      if(kind==='select')this.tone(330,.1,'triangle',.04);
+      if(kind==='order'){this.tone(220,.12,'triangle');this.tone(294,.13,'triangle',.03,.07);}
+      if(kind==='build'){this.tone(110,.12,'square',.025);this.tone(164,.15,'triangle',.04,.12);}
+      if(kind==='train'){this.tone(392,.25);this.tone(523,.3,'sine',.04,.15);}
+      if(kind==='hit')this.tone(95,.08,'sawtooth',.015);
+      if(kind==='gather')this.tone(185,.06,'triangle',.018);
+      if(kind==='win'){[262,330,392,523].forEach((f,i)=>this.tone(f,.6,'triangle',.06,i*.16));}
+    }
+  }
+  const sound=new Sound();
+  function setup(){
+    $('civs').innerHTML=E.CIVS.map(c=>`<button class="civ ${c.id===civ?'active':''}" data-civ="${c.id}"><b style="color:${c.color}">${c.icon}</b>${c.name}</button>`).join('');
+    $('civs').querySelectorAll('button').forEach(b=>b.onclick=()=>{civ=b.dataset.civ;setup();sound.cue('select');});
+    const c=E.CIVS.find(c=>c.id===civ);
+    $('civDetail').innerHTML=`<strong>${c.text} · ${c.perk}</strong><br>Silah geleneği: ${c.weapon}. Bonuslar savaş ve üretimde uygulanır; silah adları görsel tema içindir.`;
+    $('maps').innerHTML=E.MAPS.map(m=>`<button class="map ${m.id===map?'active':''}" style="border-top-color:${m.accent}" data-map="${m.id}">${m.name}<small>${m.desc}</small></button>`).join('');
+    $('maps').querySelectorAll('button').forEach(b=>b.onclick=()=>{map=b.dataset.map;setup();});
+    try{$('continueGame').disabled=!localStorage.getItem(SAVE);}catch{$('continueGame').disabled=true;}
+  }
+  function start(s,player=0){
+    state=s;pid=player;selected=[];buildType=null;paused=false;saveClock=0;contextKey='';
+    $('menu').classList.add('hidden');$('game').classList.remove('hidden');$('pauseLayer').classList.add('hidden');
+    const town=state.buildings.find(b=>b.owner===pid&&b.type==='town');if(town){camera.x=town.x;camera.y=town.y;}
+    camera.zoom=window.innerWidth<650?.8:1;resize();updateHud();
+    if(sound.enabled)sound.start();
+    toast('Köylü seç → ağaca dokun. Haritayı sürükleyerek gez.');
+    last=performance.now();
+  }
+  function save(){
+    if(network||!state)return false;
+    try{localStorage.setItem(SAVE,JSON.stringify({state,pid,camera}));return true;}catch{toast('Tarayıcı kayıt alanı kullanılamıyor.');return false;}
+  }
+  function newGame(){
+    if(network){alert('Önce Wi-Fi odasından ayrıl.');return;}
+    try{if(localStorage.getItem(SAVE)&&!confirm('Yeni sefer eski internetsiz kaydın üzerine yazılacak. Devam edilsin mi?'))return;}catch{}
+    const seed=Math.max(1,Math.min(999999,Number($('seed').value)||14573));
+    const players=Array.from({length:4},(_,i)=>({name:i===0?$('playerName').value.trim().slice(0,20)||'Gezgin':E.CIVS[(i*3+seed)%10].name,civ:i===0?civ:E.CIVS[(i*3+seed)%10].id,ai:i!==0}));
+    start(E.create({seed,map,mode:$('mode').value,players}));save();
+  }
+  function openPause(end=false){
+    if(!state)return;
+    if(!network)paused=true;
+    $('pauseLayer').classList.remove('hidden');
+    const won=state.winner===state.players[pid].team;
+    $('pauseTitle').textContent=end?(won?'Sancak senin!':'Sefer sona erdi'):(network?'Maç sürüyor':'Sefer duraklatıldı');
+    $('pauseText').textContent=end?(won?'Rakip oba merkezleri düştü. Ova senin sancağında.':'Oba merkezin yıkıldı. Yeni bir seferde farklı bir strateji dene.'):(network?'Bu menü Wi-Fi maçını durdurmaz. Diğer oyuncular oynamaya devam eder.':'İlerlemen bu tarayıcıda saklanır. Tarayıcı verilerini silmek kayıtları da siler.');
+    $('save').classList.toggle('hidden',!!network);
+    $('resume').classList.toggle('hidden',end);
+    if(!network)save();
+  }
+  async function send(c){
+    if(!state)return;
+    let result;
+    try{
+      result=network?await api('/api/command',{token:network.token,command:c}):E.command(state,pid,c);
+      if(!result.ok)toast(result.error);else sound.cue(c.type==='build'?'build':c.type==='train'?'train':'order');
+      contextKey='';updateHud();
+    }catch(e){toast(e.message);}
+    return result;
+  }
+  function actionsButton(label,detail,fn){
+    const b=document.createElement('button');b.innerHTML=escape(label)+(detail?`<small>${escape(detail)}</small>`:'');b.onclick=fn;$('actions').append(b);
+  }
+  function updateHud(){
+    if(!state)return;
+    const p=state.players[pid],r=p.res;
+    $('identity').textContent=E.civ(p).name;
+    $('resources').innerHTML=`<span><small>Odun</small>♣ ${Math.floor(r.wood)}</span><span><small>Yiyecek</small>● ${Math.floor(r.food)}</span><span><small>Altın</small>◆ ${Math.floor(r.gold)}</span><span><small>Taş</small>▰ ${Math.floor(r.stone)}</span><span><small>Nüfus</small>♟ ${E.population(state,pid)}/${E.cap(state,pid)}</span>`;
+    const left=state.players.filter(q=>!q.dead&&q.team!==p.team).length;
+    $('objective').textContent=`${network?'Wi-Fi':'İnternetsiz'} · ${state.mode==='teams'?'2’ye 2':'Herkes tek'} · ${left} rakip · ${['Oba','Hisar','Sancak'][p.age]} dönemi`;
+    selected=selected.filter(id=>!!E.find(state,id));
+    const chosen=selected.map(id=>E.find(state,id)).filter(Boolean),one=chosen.length===1?chosen[0]:null;
+    const workers=chosen.filter(o=>o.type==='worker');
+    const key=selected.join(',')+'/'+buildType+'/'+p.age+'/'+(one?.queue?.length||0)+'/'+(one?.progress>=1);
+    if(one)$('selectionInfo').textContent=`Can ${Math.ceil(one.hp)}/${one.maxHp}`+(one.progress<1?` · İnşa %${Math.floor(one.progress*100)}`:'')+(one.queue?.length?` · Kuyruk: ${one.queue.length} · ${Math.ceil(one.queue[0].left)} sn`:'')+(one.type==='farm'?` · Yiyecek ${Math.floor(one.stock)}`:'');
+    if(key===contextKey)return;contextKey=key;$('actions').replaceChildren();
+    if(buildType){
+      $('selectionTitle').textContent=E.BUILDINGS[buildType].name+' yerleştir';
+      $('selectionInfo').textContent='Boş araziye dokun. Seçili köylüler binayı inşa edecek.';
+      actionsButton('İptal','',()=>{buildType=null;contextKey='';updateHud();});return;
+    }
+    $('selectionTitle').textContent=one?(E.UNITS[one.type]?.name||E.BUILDINGS[one.type]?.name||'Kaynak'):chosen.length?`${chosen.length} birlik seçili`:'Birliğine dokun';
+    if(!one)$('selectionInfo').textContent=chosen.length?'Yere dokun: ilerle · Düşmana dokun: saldır':'Köylü → kaynak · Bina → eğitim · Ordu → hedef';
+    if(workers.length)for(const [type,d]of Object.entries(E.BUILDINGS))if(type!=='town')actionsButton(d.name,costText(d.cost),()=>{buildType=type;contextKey='';updateHud();});
+    if(one?.queue&&one.owner===pid&&one.progress>=1){
+      for(const [type,d]of Object.entries(E.UNITS))if(d.building===one.type)actionsButton(d.name+' eğit',costText(d.cost),()=>send({type:'train',id:one.id,unit:type}));
+      if(one.type==='town'&&p.age<2)actionsButton('Dönem geliştir',costText({food:250*(p.age+1),gold:150*(p.age+1)}),()=>send({type:'age'}));
+    }
+    if(!chosen.length)actionsButton('İpucu','Oba merkezine dokunarak köylü eğit',()=>toast('Beş köylüyle başlarsın. Birkaçını oduna, birkaçını yiyeceğe gönder.'));
+  }
+  function resize(){
+    viewW=innerWidth;viewH=innerHeight;const dpr=Math.min(devicePixelRatio||1,2);
+    canvas.width=Math.round(viewW*dpr);canvas.height=Math.round(viewH*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function worldPoint(x,y){return {x:(x-viewW/2)/camera.zoom+camera.x,y:(y-viewH/2)/camera.zoom+camera.y};}
+  function screenPoint(x,y){return {x:(x-camera.x)*camera.zoom+viewW/2,y:(y-camera.y)*camera.zoom+viewH/2};}
+  function isVisible(e){const p=state.players[pid];return e.owner!==undefined&&state.players[e.owner].team===p.team||p.visible.includes(Math.floor(e.y/80)*30+Math.floor(e.x/80));}
+  function tap(x,y){
+    if(paused||!state||state.winner!==null)return;
+    const at=worldPoint(x,y);
+    if(buildType){const type=buildType;send({type:'build',building:type,x:at.x,y:at.y,ids:selected}).then(r=>{if(r?.ok){buildType=null;contextKey='';updateHud();}});return;}
+    const units=state.units.filter(u=>isVisible(u)&&E.dist(u,at)<26/camera.zoom);
+    const u=units.sort((a,b)=>E.dist(a,at)-E.dist(b,at))[0];
+    const b=state.buildings.find(b=>isVisible(b)&&E.dist(b,at)<E.BUILDINGS[b.type].size+12);
+    const r=state.resources.find(r=>r.amount>0&&isVisible(r)&&E.dist(r,at)<28);
+    const target=u||b||r,ownUnits=selected.filter(id=>state.units.some(u=>u.id===id&&u.owner===pid));
+    if(target?.owner===pid&&!(target.type==='farm'&&ownUnits.some(id=>E.find(state,id)?.type==='worker'))&&!(target.progress<1&&ownUnits.some(id=>E.find(state,id)?.type==='worker'))){
+      selected=[target.id];sound.cue('select');contextKey='';updateHud();return;
+    }
+    if(ownUnits.length){send({type:'order',ids:ownUnits,target:target?.id,x:at.x,y:at.y});return;}
+    if(!target)selected=[];
+    contextKey='';updateHud();
+  }
+  const pointers=new Map();let gesture=null,pinching=false;
+  canvas.addEventListener('pointerdown',e=>{
+    canvas.setPointerCapture(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    if(pointers.size===1){pinching=false;gesture={x:e.clientX,y:e.clientY,cx:camera.x,cy:camera.y,moved:false};}
+    else if(pointers.size===2){pinching=true;const a=[...pointers.values()];gesture={dist:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y),zoom:camera.zoom};}
+  });
+  canvas.addEventListener('pointermove',e=>{
+    if(!pointers.has(e.pointerId)||!gesture)return;
+    pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    if(pointers.size===2){const a=[...pointers.values()];camera.zoom=Math.max(.35,Math.min(1.8,gesture.zoom*Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)/Math.max(10,gesture.dist)));return;}
+    if(pinching)return;
+    const dx=e.clientX-gesture.x,dy=e.clientY-gesture.y;
+    if(Math.hypot(dx,dy)>7)gesture.moved=true;
+    if(gesture.moved){camera.x=Math.max(0,Math.min(state?.w||2400,gesture.cx-dx/camera.zoom));camera.y=Math.max(0,Math.min(state?.h||1800,gesture.cy-dy/camera.zoom));}
+  });
+  canvas.addEventListener('pointerup',e=>{if(!pinching&&gesture&&!gesture.moved)tap(e.clientX,e.clientY);pointers.delete(e.pointerId);if(!pointers.size){gesture=null;pinching=false;}});
+  canvas.addEventListener('pointercancel',e=>{pointers.delete(e.pointerId);gesture=null;pinching=true;});
+  canvas.addEventListener('wheel',e=>{e.preventDefault();camera.zoom=Math.max(.35,Math.min(1.8,camera.zoom*(e.deltaY>0?.9:1.1)));},{passive:false});
+  $('minimap').onclick=e=>{if(!state)return;const r=$('minimap').getBoundingClientRect();camera.x=(e.clientX-r.left)/r.width*state.w;camera.y=(e.clientY-r.top)/r.height*state.h;};
+  function ellipse(x,y,rx,ry,color){ctx.fillStyle=color;ctx.beginPath();ctx.ellipse(x,y,rx,ry,0,0,Math.PI*2);ctx.fill();}
+  function poly(points,color){ctx.fillStyle=color;ctx.beginPath();points.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath();ctx.fill();}
+  function hpBar(o,width,y){ctx.fillStyle='#15201a';ctx.fillRect(o.x-width/2,y,width,4);ctx.fillStyle=COLORS[o.owner];ctx.fillRect(o.x-width/2,y,width*Math.max(0,o.hp/o.maxHp),4);}
+  function drawResource(r){
+    const {x,y}=r;
+    ellipse(x,y+7,16,7,'#11231b55');
+    if(r.type==='wood'){
+      ctx.fillStyle='#72543a';ctx.fillRect(x-3,y-23,6,27);
+      const winter=state.map==='kar';
+      poly([[x-19,y-8],[x,y-55],[x+19,y-8]],winter?'#789c95':'#254c37');
+      poly([[x-15,y-25],[x,y-61],[x+15,y-25]],winter?'#c0cfbf':'#49704b');
+    }else if(r.type==='food'){
+      ellipse(x,y-2,18,13,'#3f653d');for(let i=0;i<4;i++)ellipse(x-10+i*7,y-4-(i%2)*5,3,3,'#c2855b');
+    }else{
+      poly([[x-17,y+6],[x-14,y-9],[x+3,y-21],[x+18,y-7],[x+20,y+6]],'#747c7a');
+      poly([[x-14,y-9],[x+3,y-21],[x+4,y+2]],'#a3aaa0');
+      if(r.type==='gold'){poly([[x-7,y-3],[x,y-11],[x+4,y-4],[x,y+3]],'#e6c765');poly([[x+9,y-7],[x+15,y-4],[x+11,y+3]],'#cbb05b');}
+    }
+  }
+  function drawBuilding(b){
+    const {x,y,type}=b,d=E.BUILDINGS[type],sz=d.size,c=COLORS[b.owner],faction=E.civ(state.players[b.owner]);
+    ctx.globalAlpha=b.progress<1?.6:1;
+    ellipse(x,y+sz*.55,sz*1.2,sz*.55,'#0b171950');
+    if(type==='farm'){
+      poly([[x-sz,y-sz*.5],[x,y-sz],[x+sz,y],[x,y+sz*.5]],'#785d37');
+      for(let i=-3;i<4;i++){ctx.strokeStyle=b.stock>0?'#b8b96c':'#63563b';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(x-sz*.7+i*5,y+i*4);ctx.lineTo(x+sz*.2+i*5,y-sz*.4+i*4);ctx.stroke();}
+    }else{
+      const high=type==='tower'?75:sz*.8;
+      poly([[x-sz,y-high],[x,y-high+12],[x,y+sz*.5],[x-sz,y+sz*.25]],'#c4b899');
+      poly([[x,y-high+12],[x+sz,y-high],[x+sz,y+sz*.25],[x,y+sz*.5]],'#8d8b73');
+      poly([[x-sz-5,y-high],[x,y-high-sz*.6],[x+sz+5,y-high],[x,y-high+14]],faction.color);
+      poly([[x,y-high-sz*.6],[x+sz+5,y-high],[x,y-high+14]],'#00000028');
+      ctx.fillStyle='#24332c';ctx.fillRect(x+sz*.35,y-4,sz*.2,sz*.32);
+      if(type==='town'||type==='tower'){ctx.fillStyle='#66563a';ctx.fillRect(x-2,y-high-sz*.6-32,3,34);poly([[x+1,y-high-sz*.6-32],[x+25,y-high-sz*.6-28],[x+19,y-high-sz*.6-15],[x+1,y-high-sz*.6-18]],c);}
+      ctx.fillStyle='#192b23';ctx.font='bold 16px Georgia';ctx.textAlign='center';ctx.fillText(({house:'⌂',depot:'▤',barracks:'⚔',range:'➶',stable:'♞',town:faction.icon,tower:'◇'})[type]||'',x-12,y-8);
+    }
+    ctx.globalAlpha=1;
+    if(selected.includes(b.id)||b.hp<b.maxHp||b.progress<1){
+      hpBar(b,sz*1.6,y-sz*1.6-10);
+      if(b.progress<1){ctx.fillStyle='#dfcb92';ctx.fillRect(x-sz*.8,y-sz*1.6-4,sz*1.6*b.progress,3);}
+    }
+    if(selected.includes(b.id)){ctx.strokeStyle=c;ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(x,y+8,sz+7,sz*.6,0,0,Math.PI*2);ctx.stroke();}
+  }
+  function drawUnit(u){
+    const x=u.x,y=u.y,c=COLORS[u.owner],walking=u.order!=null,phase=walking?Math.sin(state.time*10+u.id)*3:0;
+    ellipse(x,y+3,u.type==='rider'?14:9,5,'#0b171960');
+    if(selected.includes(u.id)){ctx.strokeStyle='#fff0bc';ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(x,y+2,14,8,0,0,Math.PI*2);ctx.stroke();}
+    if(u.type==='rider'){ellipse(x,y-5,14,7,'#6a4939');ellipse(x+11,y-12,5,7,'#735642');ctx.strokeStyle='#352e26';ctx.lineWidth=3;for(const dx of [-8,8]){ctx.beginPath();ctx.moveTo(x+dx,y);ctx.lineTo(x+dx+phase,y+9);ctx.stroke();}}
+    else{ctx.strokeStyle='#353a31';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(x-3,y-5);ctx.lineTo(x-4+phase,y+3);ctx.moveTo(x+3,y-5);ctx.lineTo(x+4-phase,y+3);ctx.stroke();}
+    const lift=u.type==='rider'?8:0;
+    poly([[x-6,y-17-lift],[x+5,y-17-lift],[x+7,y-4-lift],[x-6,y-4-lift]],c);
+    ellipse(x,y-22-lift,4.5,5,'#d5b28b');
+    if(u.type!=='worker'){ctx.fillStyle=E.civ(state.players[u.owner]).color;ctx.fillRect(x-5,y-28-lift,10,5);}
+    else{poly([[x-8,y-25],[x,y-30],[x+8,y-25]],'#c5ad6d');if(u.carry>0){ctx.fillStyle='#ba995b';ctx.fillRect(x-9,y-15,5,8);}}
+    ctx.strokeStyle='#ded7ad';ctx.lineWidth=2;
+    if(u.type==='spear'){ctx.beginPath();ctx.moveTo(x+9,y+1);ctx.lineTo(x+10,y-32);ctx.stroke();poly([[x+7,y-30],[x+10,y-38],[x+13,y-30]],'#d7d9cd');}
+    if(u.type==='archer'){ctx.strokeStyle='#c8ae78';ctx.beginPath();ctx.arc(x+7,y-14,10,-1.2,1.2);ctx.stroke();ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x+11,y-23);ctx.lineTo(x+11,y-5);ctx.stroke();}
+    if(u.type==='rider'){ctx.beginPath();ctx.moveTo(x+7,y-17);ctx.lineTo(x+17,y-32);ctx.stroke();}
+    if(u.hp<u.maxHp||selected.includes(u.id))hpBar(u,22,y-43-lift);
+  }
+  function draw(){
+    if(!state)return;
+    ctx.clearRect(0,0,viewW,viewH);ctx.fillStyle='#15221d';ctx.fillRect(0,0,viewW,viewH);
+    const theme=E.MAPS.find(m=>m.id===state.map);
+    ctx.save();ctx.translate(viewW/2,viewH/2);ctx.scale(camera.zoom,camera.zoom);ctx.translate(-camera.x,-camera.y);
+    ctx.fillStyle=theme.ground;ctx.fillRect(0,0,state.w,state.h);
+    // Seeded ground marks: no imported textures.
+    const left=Math.max(0,Math.floor((camera.x-viewW/2/camera.zoom)/80)),right=Math.min(29,Math.ceil((camera.x+viewW/2/camera.zoom)/80));
+    const top=Math.max(0,Math.floor((camera.y-viewH/2/camera.zoom)/80)),bottom=Math.min(22,Math.ceil((camera.y+viewH/2/camera.zoom)/80));
+    for(let gy=top;gy<=bottom;gy++)for(let gx=left;gx<=right;gx++){
+      const v=(gx*719+gy*383+state.seed)%97;ctx.globalAlpha=.28;
+      ellipse(gx*80+v%60,gy*80+v%51,23+v%18,10+v%11,theme.accent);
+      ctx.globalAlpha=.4;ctx.strokeStyle=theme.accent;ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(gx*80+22,gy*80+52);ctx.lineTo(gx*80+19,gy*80+45);ctx.moveTo(gx*80+22,gy*80+52);ctx.lineTo(gx*80+26,gy*80+47);ctx.stroke();ctx.globalAlpha=1;
+    }
+    const onscreen=o=>Math.abs(o.x-camera.x)<viewW/2/camera.zoom+100&&Math.abs(o.y-camera.y)<viewH/2/camera.zoom+120;
+    const all=[...state.resources.filter(r=>r.amount>0),...state.buildings,...state.units].filter(o=>onscreen(o)&&isVisible(o)).sort((a,b)=>a.y-b.y);
+    for(const o of all){if(o.amount!==undefined)drawResource(o);else if(o.queue)drawBuilding(o);else drawUnit(o);}
+    for(const e of state.effects){
+      if(!isVisible({x:e.tx,y:e.ty}))continue;
+      if(e.kind==='arrow'){const t=1-e.left/.35,x=e.x+(e.tx-e.x)*t,y=e.y+(e.ty-e.y)*t-15;ctx.strokeStyle='#eee0af';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+(e.tx-e.x)*.04,y+(e.ty-e.y)*.04);ctx.stroke();}
+      else{ctx.strokeStyle='#f0d09a';ctx.lineWidth=2;ctx.beginPath();ctx.arc(e.tx,e.ty-12,8*(1-e.left/.35),0,Math.PI*2);ctx.stroke();}
+    }
+    const p=state.players[pid],vis=new Set(p.visible),explored=new Set(p.explored);
+    for(let y=top;y<=bottom;y++)for(let x=left;x<=right;x++){const key=y*30+x;if(!vis.has(key)){ctx.fillStyle=explored.has(key)?'#0a171bd0':'#0a1418f8';ctx.fillRect(x*80,y*80,81,81);}}
+    if(buildType){ctx.fillStyle='#eed8a8';ctx.font='14px system-ui';ctx.textAlign='center';ctx.fillText('Boş bir alana dokun',camera.x,camera.y);}
+    ctx.restore();
+    mini.fillStyle=theme.ground;mini.fillRect(0,0,180,135);
+    for(let y=0;y<23;y++)for(let x=0;x<30;x++)if(!vis.has(y*30+x)){mini.fillStyle=explored.has(y*30+x)?'#13241dbb':'#0a1418';mini.fillRect(x*6,y*6,6,6);}
+    for(const o of [...state.buildings,...state.units])if(isVisible(o)){mini.fillStyle=COLORS[o.owner];mini.fillRect(o.x/state.w*180-1,o.y/state.h*135-1,o.queue?4:2,o.queue?4:2);}
+    mini.strokeStyle='#e3d5a2';mini.lineWidth=1;mini.strokeRect((camera.x-viewW/2/camera.zoom)/state.w*180,(camera.y-viewH/2/camera.zoom)/state.h*135,viewW/camera.zoom/state.w*180,viewH/camera.zoom/state.h*135);
+  }
+  let endShown=false,audioClock=0;
+  function loop(now){
+    const dt=Math.min(.1,(now-last)/1000);last=now;
+    if(state&&!$('game').classList.contains('hidden')){
+      if(!paused&&!network){E.tick(state,dt);saveClock+=dt;if(saveClock>10){saveClock=0;save();}}
+      hudClock+=dt;if(hudClock>.35){hudClock=0;updateHud();}
+      audioClock+=dt;if(audioClock>.7){audioClock=0;
+        if(state.effects.some(e=>e.kind==='hit'&&isVisible({x:e.tx,y:e.ty})))sound.cue('hit');
+        else if(state.units.some(u=>u.owner===pid&&u.order?.kind==='gather'&&u.carry>0&&Math.abs(u.x-camera.x)<250))sound.cue('gather');
+      }
+      draw();
+      if(!endShown&&(state.winner!==null||state.players[pid].dead)){endShown=true;sound.cue('win');openPause(true);}
+    }
+    requestAnimationFrame(loop);
+  }
+  async function api(path,data){
+    const control=new AbortController(),timer=setTimeout(()=>control.abort(),6000);
+    try{
+      const response=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:control.signal});
+      const result=await response.json();if(!response.ok)throw Error(result.error||'Bağlantı kurulamadı.');return result;
+    }catch(e){if(e.name==='AbortError')throw Error('Oda sunucusuna ulaşılamadı. Wi-Fi bağlantını kontrol et.');throw e;}
+    finally{clearTimeout(timer);}
+  }
+  function lanAvailable(){if(!['http:','https:'].includes(location.protocol)){alert('Wi-Fi için bilgisayarda ODAYI_AC.cmd dosyasını çalıştırıp gösterilen adresi bu tarayıcıda aç.');return false;}return true;}
+  async function enterRoom(host){
+    if(!lanAvailable())return;
+    try{
+      const result=await api(host?'/api/create':'/api/join',{name:$('playerName').value.trim().slice(0,20)||'Gezgin',civ,code:$('roomCode').value.trim().toUpperCase(),map,mode:$('mode').value,seed:Number($('seed').value)||14573});
+      network={token:result.token,code:result.code};try{sessionStorage.setItem(SESSION,JSON.stringify(network));}catch{}
+      pollRoom();
+    }catch(e){alert(e.message.includes('JSON')?'Bu adres oda sunucusu değil. ODAYI_AC.cmd içindeki yerel adresi aç.':e.message);}
+  }
+  let pollTimer=null,polling=false,networkFailures=0;
+  async function pollRoom(){
+    clearTimeout(pollTimer);
+    if(!network||polling)return;polling=true;
+    try{
+      const result=await api('/api/state',{token:network.token});networkFailures=0;
+      if(!network)return;
+      pid=result.pid;
+      if(result.state){
+        if($('game').classList.contains('hidden')){endShown=false;start(result.state,pid);}
+        else state=result.state;
+      }else{
+        $('lobby').innerHTML=`<strong>Oda kodu: ${escape(network.code)}</strong><p>Toplam dört yer. Boş yerlere bilgisayar oyuncusu gelir.</p>`+result.seats.map((p,i)=>`<div class="seat" style="color:${COLORS[i]}">${i+1}. ${p?escape(p.name)+' · '+escape(E.CIVS.find(c=>c.id===p.civ)?.name||''): 'Bilgisayar oyuncusu'}${result.mode==='teams'?' · Takım '+(i%2+1):''}</div>`).join('');
+        $('startRoom').classList.toggle('hidden',!result.host);$('leaveRoom').classList.remove('hidden');
+        $('hostRoom').disabled=true;$('joinRoom').disabled=true;$('newGame').disabled=true;$('continueGame').disabled=true;
+      }
+    }catch(e){networkFailures++;if(networkFailures===1){if(state)toast('Bağlantı kesildi; tekrar bağlanılıyor…');else $('lobby').textContent=e.message;}
+      if(networkFailures>=8){if(state){network.disconnected=true;paused=true;openPause();$('pauseTitle').textContent='Bağlantı kesildi';$('pauseText').textContent='Oda sunucusu kapanmış olabilir. Ana menüye dönüp yeniden katıl.';$('resume').classList.add('hidden');$('save').classList.add('hidden');}else{clearNetwork();alert(e.message);}}
+    }finally{polling=false;if(network&&!network.disconnected)pollTimer=setTimeout(pollRoom,400);}
+  }
+  function clearNetwork(){
+    network=null;clearTimeout(pollTimer);try{sessionStorage.removeItem(SESSION);}catch{}
+    $('lobby').textContent='';$('startRoom').classList.add('hidden');$('leaveRoom').classList.add('hidden');
+    $('hostRoom').disabled=false;$('joinRoom').disabled=false;$('newGame').disabled=false;setup();
+  }
+  async function leaveNetwork(){if(network){try{await api('/api/leave',{token:network.token});}catch{}clearNetwork();}}
+  $('audioToggle').onclick=() => sound.toggle();$('soundGame').onclick=()=>sound.toggle();
+  $('randomSeed').onclick=()=>$('seed').value=Math.floor(1+Math.random()*999999);
+  $('newGame').onclick=()=>{endShown=false;newGame();};
+  $('continueGame').onclick=()=>{try{const data=JSON.parse(localStorage.getItem(SAVE));endShown=false;start(E.restore(data.state),data.pid);if(data.camera)camera=data.camera;}catch{alert('Kayıt okunamadı. Yeni sefer başlatabilirsin.');}};
+  $('pause').onclick=()=>openPause();$('resume').onclick=()=>{paused=false;$('pauseLayer').classList.add('hidden');};
+  $('save').onclick=()=>{if(save())$('pauseText').textContent='Sefer kaydedildi.';};
+  $('toMenu').onclick=async()=>{if(network){await leaveNetwork();}else save();state=null;paused=false;$('game').classList.add('hidden');$('menu').classList.remove('hidden');setup();};
+  $('selectWorkers').onclick=()=>{selected=state.units.filter(u=>u.owner===pid&&u.type==='worker').map(u=>u.id);buildType=null;contextKey='';updateHud();};
+  $('selectArmy').onclick=()=>{selected=state.units.filter(u=>u.owner===pid&&u.type!=='worker').map(u=>u.id);buildType=null;contextKey='';updateHud();};
+  $('clear').onclick=()=>{selected=[];buildType=null;contextKey='';updateHud();};
+  $('home').onclick=()=>{const b=state.buildings.find(b=>b.owner===pid&&b.type==='town');if(b){camera.x=b.x;camera.y=b.y;selected=[b.id];contextKey='';updateHud();}};
+  $('zoomIn').onclick=()=>camera.zoom=Math.min(1.8,camera.zoom*1.2);$('zoomOut').onclick=()=>camera.zoom=Math.max(.35,camera.zoom/1.2);
+  $('hostRoom').onclick=()=>enterRoom(true);$('joinRoom').onclick=()=>enterRoom(false);
+  $('startRoom').onclick=async()=>{try{await api('/api/start',{token:network.token});}catch(e){alert(e.message);}};
+  $('leaveRoom').onclick=leaveNetwork;
+  addEventListener('resize',resize);addEventListener('pagehide',()=>save());
+  document.addEventListener('visibilitychange',()=>{if(document.hidden){save();sound.ctx?.suspend();if(state&&!network&&state.winner===null)openPause();}else if(sound.enabled)sound.ctx?.resume();});
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&state)openPause();});
+  setup();resize();requestAnimationFrame(loop);
+  let installPrompt=null;
+  addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;$('install').classList.remove('hidden');});
+  $('install').onclick=async()=>{if(!installPrompt)return;await installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;$('install').classList.add('hidden');};
+  addEventListener('appinstalled',()=>{$('install').classList.add('hidden');$('offlineStatus').textContent='Ana ekrana eklendi. İlk yükleme tamamlandıktan sonra internetsiz sefer oynayabilirsin.';});
+  if(document.querySelector('link[rel="manifest"]')&&'serviceWorker' in navigator&&window.isSecureContext){
+    navigator.serviceWorker.register('./sw.js').then(()=>navigator.serviceWorker.ready).then(()=>{
+      $('offlineStatus').textContent='İnternetsiz kullanım dosyaları hazır. Ana ekrana ekleme seçeneği tarayıcı menüsünde de bulunabilir.';
+    }).catch(()=>{$('offlineStatus').textContent='İnternetsiz önbellek kurulamadı. Tek dosyalı sürümü kullanabilirsin.';});
+  }
+  try{const old=JSON.parse(sessionStorage.getItem(SESSION));if(old?.token&&lanAvailable()){network=old;pollRoom();}}catch{}
+})();
+</script>
+</body></html>
